@@ -59,6 +59,9 @@
                             alert(result.msg);
                             location.href = '/login'
                         }
+                    },
+                    error: function (err) {
+                        alert(err.responseJSON.msg)
                     }
 
                 })
