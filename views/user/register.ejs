@@ -9,18 +9,18 @@
     <link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <style>
         #form {
-      width: 400px;
-      margin: 0 auto;
-      margin-top: 100px;
-    }
+            width: 400px;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
 
-    h1 {
-      text-align: center;
-    }
+        h1 {
+            text-align: center;
+        }
 
-    input[type='submit'] {
-      width: 100%;
-    }
+        input[type='submit'] {
+            width: 100%;
+        }
   </style>
 </head>
 
@@ -46,7 +46,26 @@
 
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script>
+        $(function () {
+            $('#form').on('submit', function (e) {
+                $.ajax({
+                    url: '/register',
+                    type: 'post',
+                    data: $('#form').serialize(),
+                    dataType: 'json',
+                    success: function (result) {
+                        console.log(result);
+                        if (result.status === 200) {
+                            alert(result.msg);
+                            location.href = '/login'
+                        }
+                    }
 
+                })
+                // 阻止表单的提交事件
+                return false;
+            })
+        })
     </script>
 </body>
 
