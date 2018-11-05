@@ -11,8 +11,6 @@ app.set('views', './views')
 // 把node_modules文件夹托管为静态资源
 app.use('/node_modules', express.static('./node_modules'))
 
-
-
 // 注册body-parser中间件
 app.use(bodyParser.urlencoded({
     extended: false
