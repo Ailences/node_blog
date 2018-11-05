@@ -1,2 +1,15 @@
 # node_blog
-博客
+一个博客网站
+项目涉及到 bootstrap node.js mysql
+
+- [x] bootstrap 搭建前台页面
+
+- [x] MySQL模拟数据
+
+- [x] node搭建服务器
+
+- [x] 用户注册功能
+
+- [x] 用户登录功能
+ 
+
