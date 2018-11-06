@@ -22,8 +22,8 @@ module.exports = {
         // 查寻当前传递过来的用户名是否已存在
         const querySql = 'select count(*) as count from users where username = ?'
         conn.query(querySql, user.username, (err, result) => {
-            console.log(err)
-            console.log(result)
+            // console.log(err)
+            // console.log(result)
             if (err) return res.status(500).send({
                 status: 500,
                 msg: '用户查询失败!请重试!'
@@ -64,7 +64,7 @@ module.exports = {
                 msg: '用户名或密码错误!请重试!'
             })
             // 登录成功存储用户信息到session中
-            console.log(result)
+            // console.log(result)
             req.session.user = result[0]
             req.session.isLogin = true
             // 设置cookie过期时间
